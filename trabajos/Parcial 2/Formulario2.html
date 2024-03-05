@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulario</title>
+</head>
+<body>
+	<center>
+	<h1>Venta en línea</h1>
+	</center>
+	<form method="post" enctype="text/plain">
+		<fieldset>
+			<legend>Informacion general</legend>
+			
+			<table align="center" >
+            <thead>
+                <tr>
+                    <th ><label for="nombre">
+    		        Nombre:</label><br/>
+    		         <input type="text" name="nombre" id="nombre"
+    		         size="20" maxlength="20" title="nombre " placeholder="Nombre"></th>
+                    <th><label for="paterno">
+    		        Apellido paterno :</label><br/>
+    		         <input type="text" name="paterno" id="paterno"
+    		         size="20" maxlength="20" title="paterno " placeholder="Apellido paterno" ></th>
+                    <th><label for="materno">
+    		         Apellido materno :</label><br/>
+    		         <input type="text" name="materno" id="materno"
+    		         size="20" maxlength="20" title="materno" placeholder="Apellido materno"><br/></th>
+                </tr>
+                <tfoot>
+                <tr>
+                    <td><label for="usuario">
+    		         Nombre del usuario:</label><br/>
+    		          <input type="text" name="usuario" id="usuario"
+    		         size="20" maxlength="20" title="Nombre del usuario" placeholder="Nombre usuario">
+    		     </td>
+                    <td><label for="pass">Contraseña</label><br/>
+    		         <input type="password" name="pass" id="pass" placeholder="Contraseña"></td>
+                    <td><label for="fechan">Fecha de nacimiento</label><br/>
+    		        <input type="date" name="fechan" id="fechan"><br/></td>
+                </tr>
+            </tfoot>
+            </thead>
+        </table>
+        </fieldset>
+    </form>
+    <form>
+    	<fieldset>
+       <legend>Datos de facturacion</legend>
+       <table align="center" >
+            <thead>
+                <tr>
+                    <th><label>Pais</label><br/>
+                        <select name=“Pais"> <optgroup l><option selected>Mexico</option><option>EUA</option><option>Canada</option> <option>Colombia</option> </optgroup></select>
+                    </th>
+                    <th><label>Ciudad</label><br/>
+                        <select name=“Ciudades"> <optgroup l><option selected>San Luis Potosi</option><option>Queretaro</option><option>Monterrey</option> <option>Aguascalientes</option> </optgroup></select>
+                    </th>
+                    <th><label for="text">Calle</label><br/>
+                        <input type="calle" name="calle" id="calle"
+                     size="20" maxlength="20" title="calle" placeholder="Calle">
+                    </th>
+                </tr>
+                <tbody>
+                <tr>
+                    <td ><label for="Numero">
+                     Numero de casa:</label><br/>
+                      <input type="Numero" name="direccion" id="direccion"
+                     size="20" maxlength="20" title="direccion" placeholder="Numero exterior"></td>
+                    <td><label for="text">
+                     Colonia:</label><br/>
+                      <input type="text" name="colonia" id="colonia"
+                     size="20" maxlength="20" title="colonia" placeholder="Colonia"></td>
+                    <td><label for="email">
+                     E-mail:</label><br/>
+                      <input type="email" name="correo" id="correo"
+                     size="20" maxlength="20" title="correo" placeholder="E-mail"></td>
+                </tr>
+            </tbody>
+                <tfoot>
+                  <tr> 
+                  <td><label for="text">
+                     RFC:</label><br/>
+                      <input type="rfc" name="rfc" id="rfc"
+                     size="20" maxlength="20" title="rfc" placeholder="RFC">
+                 </td> 
+                 <td><label for="text">
+                     Codigo postal:</label><br/>
+                      <input type="text" name="ZZ" id="colonia"
+                     size="20" maxlength="20" title="colonia" placeholder="Colonia">
+                 </td> 
+                 <td>
+                   <input name="boton" type="submit" value="Enviar">   
+                 </td> 
+                </tr>
+                <td>
+                <input name="boton" type=“reset" value=“restablecer">
+                </td>
+                 </tr>
+                </tfoot>  
+
+
+</body>
+</html>
