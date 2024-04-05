@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('Ruboto-Regular.ttf') format('truetype'),
+         url('OFL.txt') format('opentype');
+}
+
+*{
+	font-family: Roboto-Regular;
+	background-color: gray;
+
+}
+
+.titulo:hover{
+	width: 90%;
+	text-align: center;
+	background-color: #E8FF00;
+	color: green;
+	height: 200%;
+	border-radius: 10px;
+	transform: skewX(-30deg); 
+	background: radial-gradient(center, circle, orange ,red);
+
+
+}
+
+
+.titulo{
+	width: 90%;
+	text-align: center;
+	background-color: #D35400 ;
+	color: black;
+	height: 200%;
+	border-radius: 20px;
+	
+
+}
+
+
+
+
+.titulo:active{
+	color: gray;
+	border-radius: 20px;
+	text-align: center;
+	width: 90%;
+	height: 200%;
+	background: radial-gradient(center,circle,#51FF00,#51FF00 );
+	background: -moz-radial-gradient(center,circle,#51FF00,#51FF00 );
+	background: -webkit-radial-gradient(center,circle,#51FF00,#51FF00  );
+	box-shadow: 15px 15px 20px black;
+	-moz-box-shadow: 15px 15px 20px black;
+	-webkit-box-shadow: 15px 15px 20px black;
+}
