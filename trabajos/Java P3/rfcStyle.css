@@ -1,0 +1,51 @@
+*{
+    background-color: azure;
+}
+
+input{
+    background-color: antiquewhite;
+}
+
+#nombre{
+    width: 30%;
+    height: 25px;
+}
+
+#ap{
+    width: 30%;
+    height: 25px;
+}
+
+#am{
+    width: 30%;
+    height: 25px;
+}
+
+#anio{
+    width: 30%;
+    height: 25px;
+}
+
+#mes{
+    width: 30%;
+    height: 25px;
+}
+
+#dia{
+    width: 30%;
+    height: 25px;
+}
+
+#resultado{
+    width: 30%;
+    height: 25px;
+}
+
+#button{
+    background-color: aqua;
+    width: 100%;
+    height: 30px;
+}
+
+
+
