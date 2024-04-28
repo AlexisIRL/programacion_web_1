@@ -1,0 +1,14 @@
+*{
+    background-color: lightcyan;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 90%;
+}
+li{
+    font-weight: bold; 
+    font-size: 30px; 
+    color: rgb(16, 58, 18);
+    list-style-type: none;
+}
