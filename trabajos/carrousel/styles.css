@@ -1,0 +1,48 @@
+/* Estilo para todos los elementos */
+* {
+  background-color: #6FF7C6; /* Color de fondo para todos */
+}
+
+/* Estilo para el contenedor principal del carrusel */
+.carousel {
+  position: relative; /* Posición relativa */
+  max-width: 600px; /* Ancho del carrusel */
+  margin: auto; 
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del carrusel */
+}
+
+/* Estilo para el contenido del carrusel */
+.carousel-content {
+  display: flex; /* Utiliza un diseño flexible para alinear las imágenes horizontalmente */
+}
+
+.carousel-content img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  display: none; /* Oculta todas las imágenes por defecto */
+}
+
+
+.carousel-content img.active {
+  display: block; /* Muestra la imagen activa */
+}
+
+
+button {
+  position: absolute;
+  top: 50%; /* Coloca los botones en la mitad superior del carrusel */
+  transform: translateY(-50%); 
+  background: rgba(0, 0, 0, 0.5); 
+  color: white; 
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado interno de los botones */
+  cursor: pointer; 
+}
+
+
+#prevBtn {
+  left: 0; /* Coloca el botón  a la izquierda */
+}
+
+#nextBtn {
+  right: 0; /* Coloca el botón de avance a la derecha */
+}
