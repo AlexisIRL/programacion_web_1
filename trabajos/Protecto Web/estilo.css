@@ -133,3 +133,15 @@ td:hover{
     background-color:  #00000000;
 
 }
+
+footer {
+    margin: 50px 50px 0px 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4B7C66;
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
