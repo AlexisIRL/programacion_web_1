@@ -31,15 +31,25 @@
         border-radius: 4px;
     }
     button {
-        padding: 10px 20px;
-        background-color: #4caf50;
+        padding: 5px 10px;
+        background-color: #6dbdf1;
         color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        
     }
     button:hover {
         background-color: #45a049;
+    }
+    .suggestions {
+        margin-top: 20px;
+    }
+    .suggestion {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 4px;
     }
 </style>
 </head>
@@ -54,17 +64,61 @@
         </div>
         <button type="submit">Enviar</button>
     </form>
+
+    <div class="suggestions">
+        <h3>Sugerencias y quejas anteriores:</h3>
+        <div id="suggestionsList"></div>
+    </div>
 </div>
 
 <script>
+    
+    function obtenerSugerencias() {
+        var sugerencias = JSON.parse(localStorage.getItem("sugerencias")) || [];
+        var suggestionsList = document.getElementById("suggestionsList");
+        suggestionsList.innerHTML = "";
+        sugerencias.forEach(function(sugerencia, index) {
+            var suggestionDiv = document.createElement("div");
+            suggestionDiv.classList.add("suggestion");
+            suggestionDiv.textContent = sugerencia;
+            
+            
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Eliminar";
+            deleteButton.addEventListener("click", function() {
+              
+                sugerencias.splice(index, 1);
+                
+                localStorage.setItem("sugerencias", JSON.stringify(sugerencias));
+                
+                obtenerSugerencias();
+            });
+            suggestionDiv.appendChild(deleteButton);
+
+            suggestionsList.appendChild(suggestionDiv);
+        });
+    }
+
+    
+    window.onload = obtenerSugerencias;
+
     document.getElementById("sugerenciaForm").addEventListener("submit", function(event) {
         event.preventDefault();
         var mensaje = document.getElementById("mensaje").value;
+
+        var sugerencias = JSON.parse(localStorage.getItem("sugerencias")) || [];
         
-        // Aquí podrías agregar la lógica para enviar el mensaje a través de AJAX o cualquier otro método
         
+        sugerencias.push(mensaje);
+        
+        
+        localStorage.setItem("sugerencias", JSON.stringify(sugerencias));
+
+        
+        obtenerSugerencias();
+
         alert("¡Gracias por tu sugerencia o queja!");
-        document.getElementById("mensaje").value = ""; // Limpiar el campo después de enviar
+        document.getElementById("mensaje").value = ""; 
     });
 </script>
 
