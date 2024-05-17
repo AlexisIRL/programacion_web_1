@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"><!--Meta etiqueta para el conjunto de caracteres-->
+    <title>Palindromo</title>
+    <link rel="stylesheet" href="examen3.css"><!-- Enlace al archivo CSS externo -->
+    <h4>Examen practico parcial 3</h4>
+    <h4>Alexis Israel Rivas Lara-184204</h4>
+    <script type="text/javascript">
+        // Función para verificar si una cadena es un palíndromo
+        function palindromo() {
+            var cadena = document.getElementById("cad").value;//Obtener el valor 
+            var resultado = "La frase \"" + cadena + "\" \n";
+            var cadenaOriginal = cadena.toLowerCase();// Convertir la cadena a minúsculas
+            var letrasEspacios = cadenaOriginal.split("");//Dividir la cadena en un array de caracteres
+            var cadenaSinEspacios = "";//Variable para almacenar la cadena sin espacios
+
+            // Eliminar los espacios de la cadena
+            for (var i in letrasEspacios) {
+                if (letrasEspacios[i] != " ") {
+                    cadenaSinEspacios += letrasEspacios[i];
+                }
+            }
+
+            var letras = cadenaSinEspacios.split("");//Crear un array de caracteres de la cadena sin espacios
+            var letrasReves = cadenaSinEspacios.split("").reverse();//Crear un array de caracteres de la cadena invertida
+            var iguales = true;//Variable para verificar si las cadenas son iguales
+
+            // Comparar los caracteres de la cadena original con la invertida
+            for (var i in letras) {
+                if (letras[i] != letrasReves[i]) {
+                    iguales = false;
+                    break;
+                }
+            }
+
+            //Compara para determinar el resultado final
+            if (iguales) {
+                resultado += " es un palíndromo";
+            } else {
+                resultado += " no es un palíndromo";
+            }
+            document.getElementById("iguales").innerText = resultado; // Mostrar el resultado en el elemento con id "iguales"
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <!--Formulario para ingresar la frase a evaluar-->
+        <form>
+            <h2>Escribe en el cuadro la frase a evaluar</h2> 
+            <input type="text" id="cad" name="palíndromo"><br>
+        </form><br>
+    </div>
+    <input type="button" value="Evaluar frase" onclick="palindromo()"><br><!-- Botón para evaluar la frase -->
+    <p id="iguales"></p><br> <!--parrafo para mostrar el resultado-->
+</body>
+</html>
