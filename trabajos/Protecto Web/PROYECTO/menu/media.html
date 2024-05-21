@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Computación cuántica</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css"> <!-- Enlace al archivo de estilos CSS -->
+    <script>
+        // Función para alternar la visibilidad de los elementos de navegación
+        function accion() {
+            var ancla = document.getElementsByClassName("nav-enlace");
+            for (var i = 0; i < ancla.length; i++) {
+                ancla[i].classList.toggle("desaparece");
+            }
+        }
+
+        // Función para reproducir el video al pasar el cursor sobre él
+        function playVideo(video) {
+            video.play();
+        }
+
+        // Función para pausar el video cuando el cursor sale de él
+        function pauseVideo(video) {
+            video.pause();
+        }
+
+        // Seleccionar los elementos de video y agregar eventos para reproducir y pausar
+        var video1 = document.getElementById("myVideo1");
+        var video2 = document.getElementById("myVideo2");
+
+        video1.addEventListener("mouseover", function() {
+            playVideo(video1);
+        });
+
+        video1.addEventListener("mouseout", function() {
+            pauseVideo(video1);
+        });
+
+        video2.addEventListener("mouseover", function() {
+            playVideo(video2);
+        });
+
+        video2.addEventListener("mouseout", function() {
+            pauseVideo(video2);
+        });
+    </script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <button class="nav-boton" onclick="accion()">MENÚ></button>
+        <a href="../Proyecto.html" class="nav-enlace desaparece">INICIO</a>
+        <a href="../info/informacion.html" class="nav-enlace desaparece">INFORMACION Y GRAFICA</a>
+        <a href="../menu/preguntas.html" class="nav-enlace desaparece">PREGUNTAS FRECUENTES</a>
+        <a href="../menu/media.html" class="nav-enlace desaparece">VIDEOS Y MEMES</a>
+        <a href="../menu/forms/interaccion.html" class="nav-enlace desaparece">CUESTIONARIO</a>
+        <a href="../menu/sugerencia2.html" class="nav-enlace desaparece">BLOG</a>
+    </nav>
+
+    <!-- Tabla para mostrar los videos y las imágenes -->
+    <table>
+        <tbody>
+            <tr>
+                <!-- Primer video -->
+                <td>
+                    <video id="myVideo1" controls>
+                        <source src="videos/vid1.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <!-- Segundo video -->
+                <td>
+                    <video id="myVideo2" controls>
+                        <source src="videos/vid2.mp4" type="video/mp4">
+                    </video>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!-- Barra de imágenes -->
+                <td colspan="2">
+                    <div class="image-bar">
+                        <img src="meme1.jpg" alt="Imagen 1" class="image">
+                        <img src="meme2.jpg" alt="Imagen 2" class="image">
+                        <img src="meme3.png" alt="Imagen 3" class="image">
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

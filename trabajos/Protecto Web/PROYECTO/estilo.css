@@ -1,0 +1,106 @@
+/* Estilo aplicado a todos los elementos */
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente para todos los elementos */
+}
+
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: georgina; /* Fuente para el cuerpo de la página */
+    background-color: #F3F0E9; /* Color de fondo */
+    background-image: url(im3.jpg); /* Imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: 1500px, 800px; /* Tamaño de la imagen de fondo */
+    font-size-adjust: auto; /* Ajustar el tamaño de la fuente */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-enlace {
+    display: inline-block; /* Mostrar en línea */
+    background-color: #00000000; /* Color de fondo transparente */
+    color: white; /* Color del texto */
+    padding: 10px 30px; /* Relleno interno */
+    text-decoration-style: none; /* Estilo de decoración de texto */
+}
+
+.nav-enlace:hover {
+    border-radius: 20px; /* Borde redondeado */
+    background-color: #BDBDBD; /* Cambio de color de fondo al pasar el mouse */
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background: #00000000; /* Color de fondo transparente */
+    padding: 10px; /* Relleno interno */
+    display: flex; /* Mostrar como flexbox */
+    justify-content: space-around; /* Distribuir elementos uniformemente */
+}
+
+/* Estilos para el botón de menú en dispositivos móviles */
+.nav-boton {
+    background: #00000000; /* Color de fondo transparente */
+    color: aliceblue; /* Color del texto */
+    padding: 10px 0px; /* Relleno interno */
+    border: 2px solid aliceblue; /* Borde */
+    display: none; /* Ocultar por defecto */
+}
+
+/* Media query para dispositivos con ancho máximo de 600px */
+@media (max-width: 600px) {
+    nav {
+        background: black; /* Cambiar color de fondo */
+        flex-direction: column; /* Cambiar dirección de flexbox a columna */
+    }
+    .nav-enlace { margin: 10px 0px; } /* Añadir margen a los enlaces */
+    .nav-boton { display: inline-block; } /* Mostrar el botón de menú */
+    .desaparece { display: none; } /* Ocultar los enlaces */
+}
+
+/* Estilos para el título */
+.titulo {
+    text-align: center; /* Alinear al centro */
+    position: absolute; /* Posición absoluta */
+    left: 55%; /* Ajuste horizontal */
+    top: 30%; /* Ajuste vertical */
+    color: white; /* Color del texto */
+    font-size: 80px; /* Tamaño de la fuente */
+}
+
+/* Estilos para los nombres de los autores */
+.mar {
+    position: absolute; /* Posición absoluta */
+    left: 70%; /* Ajuste horizontal */
+    top: 80%; /* Ajuste vertical */
+    color: white; /* Color del texto */
+    font-size: 30px; /* Tamaño de la fuente */
+}
+
+.alexis {
+    position: absolute; /* Posición absoluta */
+    left: 70%; /* Ajuste horizontal */
+    top: 70%; /* Ajuste vertical */
+    color: white; /* Color del texto */
+    font-size: 30px; /* Tamaño de la fuente */
+}
+
+/* Media query para dispositivos con ancho entre 768px y 992px */
+@media (min-width: 768px) and (max-width: 992px) {
+    .titulo { font-size: 60px; } /* Cambiar tamaño del título */
+}
+
+/* Estilos adicionales */
+.sub {
+    font-family: serif; /* Fuente para elementos con clase "sub" */
+    font-size: 30px; /* Tamaño de la fuente */
+}
+/* Estilos para el pie de página */
+footer {
+    margin: 50px 50px 0px 0px; /* Márgenes */
+    position: fixed; /* Posición fija */
+    bottom: 0; /* En la parte inferior */
+    left: 0; /* A la izquierda */
+    width: 100%; /* Ancho completo */
+    background-color: #4B7C66; /* Color de fondo */
+    color: black; /* Color del texto */
+    padding: 20px; /* Relleno interno */
+    text-align: center; /* Alinear al centro */
+}

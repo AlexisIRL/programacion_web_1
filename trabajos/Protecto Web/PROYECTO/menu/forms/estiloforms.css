@@ -1,0 +1,115 @@
+*{
+    background-color: #41997B;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nav-enlace{
+	display: inline-block;
+    border-radius: 4px; ;
+	background-color:#006542 ;  
+	color:white;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+.nav-enlace:hover{
+	background-color: #BDBDBD;
+}
+nav{
+    border-radius: 4px;
+	background: #00472E ;
+	padding: 10px;
+	/*por defecto debe tener inline block*/
+	display: flex;
+	justify-content: space-around;
+}
+.nav-boton{
+	background: #0D614D;
+	color: aliceblue;
+	padding: 10px 0px;
+	border: 2px solid aliceblue;
+	display: none;
+}
+/*media sirve para que hagas restricciones*/
+@media(max-width:600px){
+	nav{
+		background: black;
+		flex-direction: column;
+	}
+	.nav-enlace{
+		margin: 10px 0px;
+	}
+	.nav-boton{
+		display: inline-block;
+	}
+	.desaparece{
+		display: none;
+	}
+}
+
+#contiene {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color:#3D8F72;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    background-color:#3D8F72;
+    text-align: center;
+    color: black;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+ul {
+    background-color:#3D8F72;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #3D8F72;
+    font-weight: bold; /* Ponemos en negrita */
+    font-size: 18px; 
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="button"] {
+    background-color: gainsboro;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color:gainsboro;
+    color: black;
+}
+
+p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#pdf21 {
+    background-color: lightgrey;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+

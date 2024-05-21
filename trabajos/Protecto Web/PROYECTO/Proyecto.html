@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- La sección de encabezado contiene metadatos y enlaces a recursos externos -->
+    <meta charset="utf-8"> <!-- Define el conjunto de caracteres como UTF-8 -->
+    <title>Computación cuántica</title> <!-- Título de la página -->
+    <link rel="stylesheet" type="text/css" href="estilo.css"> <!-- Enlace al archivo de estilos CSS -->
+    <script type="text/javascript">
+        var vsid = "si2707265c77b0c"; // Variable para identificación de VirtualSpirits
+        // Script para cargar el chatbot de VirtualSpirits de manera asíncrona
+        (function() {
+            var vsjs = document.createElement('script');
+            vsjs.type = 'text/javascript';
+            vsjs.async = true;
+            vsjs.setAttribute('defer', 'defer');
+            vsjs.src = 'https://www.virtualspirits.com/vsa/chat.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vsjs, s);
+        })();
+    </script>
+</head>
+<body>
+    <!-- La sección de cuerpo contiene el contenido principal de la página -->
+    <nav>
+        <!-- Sección de navegación -->
+        <button class="nav-boton" onclick="accion()">MENÚ></button> <!-- Botón de menú -->
+        <!-- Enlaces a diferentes partes de la página y otras páginas relacionadas -->
+        <a href="Proyecto.html" class="nav-enlace desaparece">INICIO</a>
+        <a href="info/informacion.html" class="nav-enlace desaparece">INFORMACION Y GRAFICA</a>
+        <a href="menu/preguntas.html" class="nav-enlace desaparece">PREGUNTAS FRECUENTES</a>
+        <a href="menu/media.html" class="nav-enlace desaparece">VIDEOS Y MEMES</a>
+        <a href="menu/forms/interaccion.html" class="nav-enlace desaparece">CUESTIONARIO</a>
+        <a href="menu/sugerencia2.html" class="nav-enlace desaparece">BLOG</a>
+    </nav>
+    <!-- Script para mostrar u ocultar los enlaces de navegación -->
+    <script>
+        function accion() {
+            var ancla = document.getElementsByClassName("nav-enlace");
+            for (var i = 0; i < ancla.length; i++) {
+                ancla[i].classList.toggle("desaparece");
+            }
+        }
+    </script>
+    <!-- Encabezados de integrantes del equipo -->
+    <h1 class="titulo">Computación cuántica</h1>
+    <h3 class="mar">Maribel Aguilar Hernandez-183375</h3>
+    <h3 class="alexis">Alexis Israel Rivas Lara-184204</h3>
+    <!-- Pie de página con enlaces a redes sociales -->
+    <footer>Facebook: ComputacionCuantic | |  Instagram:CompCuantica | |  Twitter:ComputacionCuantica</footer>
+</body>
+</html>
