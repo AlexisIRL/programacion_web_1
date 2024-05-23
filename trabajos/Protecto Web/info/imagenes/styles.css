@@ -1,0 +1,33 @@
+.carousel {
+      position: relative; /* Posicionamiento relativo para los elementos  */
+      max-width: 600px; /* Ancho máximo  */
+      margin: auto; /* Centrar  */
+      overflow: hidden; /* Ocultar cualquier contenido que exceda el ancho del carrusel */
+    }
+    .carousel-content {
+      display: flex; /* Utilizar un contenedor */
+    }
+    .carousel-content img {
+      width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+      display: none; /* Ocultar todas las imágenes*/
+    }
+    .carousel-content img.active {
+      display: block; /* Mostrar la imagen*/
+    }
+    button {
+      position: absolute; /* Posicionamiento para los botones */
+      top: 50%; /* Posicionamiento vertical al centro */
+      transform: translateY(-50%); /* Ajuste vertical para centrar */
+      background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+      color: white; /* Color de texto blanco */
+      border: none; /* Sin borde */
+      padding: 10px; /* Espaciado */
+      cursor: pointer; /* Cursor apuntador al pasar sobre los botones */
+    }
+    #prevBtn {
+      left: 0; /* Alinear a la izquierda del contenedor */
+    }
+    #nextBtn {
+      right: 0; /* Alinear a la derecha del contenedor */
+    }
+
