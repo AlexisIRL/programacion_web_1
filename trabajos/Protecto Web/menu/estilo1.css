@@ -1,0 +1,93 @@
+/* Regla para aplicar a todos los elementos */
+* {
+    background-color: #EAF6CE; /* Color de fondo para todos los elementos */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente para todos los elementos */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-enlace {
+    display: inline-block;
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #006542; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 30px; /* Espaciado interno */
+    text-decoration: none; /* Quita el subrayado del texto */
+}
+
+/* Cambia el color de fondo al pasar el cursor sobre los enlaces */
+.nav-enlace:hover {
+    background-color: #BDBDBD;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    border-radius: 4px; /* Bordes redondeados */
+    background: #00472E; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Distribución de elementos en línea */
+    justify-content: space-around; /* Alineación de elementos */
+}
+
+/* Estilos para el botón de menú */
+.nav-boton {
+    background: #0D614D; /* Color de fondo */
+    color: aliceblue; /* Color del texto */
+    padding: 10px 0px; /* Espaciado interno */
+    border: 2px solid aliceblue; /* Borde sólido */
+    display: none; /* Oculta por defecto */
+}
+
+/* Estilos para la barra de navegación en dispositivos pequeños */
+@media(max-width: 600px) {
+    nav {
+        background: black; /* Color de fondo */
+        flex-direction: column; /* Cambia la dirección de los elementos */
+    }
+    .nav-enlace {
+        margin: 10px 0px; /* Margen superior e inferior */
+    }
+    .nav-boton {
+        display: inline-block; /* Muestra en línea */
+    }
+    .desaparece {
+        display: none; /* Oculta */
+    }
+}
+
+/* Estilos para los encabezados h1 y h3 */
+h1, h3 {
+    color: black; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+}
+
+/* Estilos para los párrafos */
+p {
+    background-color: #f2f2f2; /* Color de fondo */
+}
+
+/* Estilos para el contenedor principal */
+.contenedor {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para los encabezados h2 */
+h2 {
+    border-radius: 3px; /* Bordes redondeados */
+    color: black; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    cursor: pointer; /* Cambia el cursor */
+    background-color: lightgray; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para las respuestas */
+div.respuesta {
+    border-radius: 3px; /* Bordes redondeados */
+    display: none; /* Oculta por defecto */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior */
+    background-color: #f2f2f2; /* Color de fondo */
+}

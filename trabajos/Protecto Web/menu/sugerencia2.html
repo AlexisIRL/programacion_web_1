@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Sugerencias o Quejas</title>
+<style>
+    * {
+    background-color: #EAF6CE; /* Color de fondo para todos los elementos */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente para todos los elementos */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-enlace {
+    display: inline-block;
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #006542; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 30px; /* Espaciado interno */
+    text-decoration: none; /* Quita el subrayado del texto */
+}
+
+/* Cambia el color de fondo al pasar el cursor sobre los enlaces */
+.nav-enlace:hover {
+    background-color: #BDBDBD;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    border-radius: 4px; /* Bordes redondeados */
+    background: #00472E; /* Color de fondo */
+    padding: 10px; /* Espaciado interno */
+    display: flex; /* Distribución de elementos en línea */
+    justify-content: space-around; /* Alineación de elementos */
+}
+
+/* Estilos para el botón de menú */
+.nav-boton {
+    background: #0D614D; /* Color de fondo */
+    color: aliceblue; /* Color del texto */
+    padding: 10px 0px; /* Espaciado interno */
+    border: 2px solid aliceblue; /* Borde sólido */
+    display: none; /* Oculta por defecto */
+}
+
+/* Estilos para la barra de navegación en dispositivos pequeños */
+@media(max-width: 600px) {
+    nav {
+        background: black; /* Color de fondo */
+        flex-direction: column; /* Cambia la dirección de los elementos */
+    }
+    .nav-enlace {
+        margin: 10px 0px; /* Margen superior e inferior */
+    }
+    .nav-boton {
+        display: inline-block; /* Muestra en línea */
+    }
+    .desaparece {
+        display: none; /* Oculta */
+    }
+}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+       background-color: #fff;
+        font-weight: bold;
+    }
+    textarea {
+       background-color: #fff;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        padding: 5px 10px;
+        background-color: #6dbdf1;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        align: right;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .suggestions {
+        margin-top: 20px;
+    }
+    .suggestion {
+       background-color: #fff;
+        margin-bottom: 10px;
+        padding: 10px;
+     
+        border-radius: 4px;
+    }
+</style>
+</head>
+<body>
+       <nav>
+        <button class="nav-boton" onclick="accion()">MENÚ></button>
+        <a href="../Proyecto.html" class="nav-enlace desaparece" >INICIO</a>
+        <a href="../info/informacion.html" class="nav-enlace desaparece" >INFORMACION Y GRAFICA</a>
+        <a href="../menu/preguntas.html" class="nav-enlace desaparece">PREGUNTAS FRECUENTES</a>
+        <a href="../menu/media.html" class="nav-enlace desaparece">VIDEOS Y MEMES</a>
+        <a href="../menu/forms/interaccion.html" class="nav-enlace desaparece">CUESTIONARIO</a>
+        <a href="../menu/sugerencia2.html" class="nav-enlace desaparece">BLOG</a>
+    </nav>
+    <!-- Script para controlar el despliegue de respuestas -->
+    <script>
+        function accion() {
+            var ancla = document.getElementsByClassName("nav-enlace");
+            for (var i = 0; i < ancla.length; i++) {
+                ancla[i].classList.toggle("desaparece");
+            }
+        }
+
+        function toggleRespuesta(id) {
+            var respuesta = document.getElementById(id);
+            respuesta.style.display = (respuesta.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+<div class="container">
+    <h2>Envía tus sugerencias o quejas</h2>
+    <form id="sugerenciaForm">
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu sugerencia o queja aquí"></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="suggestions">
+        <h3>Sugerencias y quejas anteriores:</h3>
+        <div id="suggestionsList"></div>
+    </div>
+</div>
+
+<script>
+    // Función para obtener las sugerencias y quejas anteriores desde el almacenamiento local
+    function obtenerSugerencias() {
+        var sugerencias = JSON.parse(localStorage.getItem("sugerencias")) || [];
+        var suggestionsList = document.getElementById("suggestionsList");
+        suggestionsList.innerHTML = "";
+        sugerencias.forEach(function(sugerencia, index) {
+            var suggestionDiv = document.createElement("div");
+            suggestionDiv.classList.add("suggestion");
+            suggestionDiv.textContent = sugerencia;
+            
+            // Botón de eliminar
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Eliminar";
+            deleteButton.addEventListener("click", function() {
+                // Eliminar la sugerencia del array
+                sugerencias.splice(index, 1);
+                // Actualizar el almacenamiento local
+                localStorage.setItem("sugerencias", JSON.stringify(sugerencias));
+                // Actualizar la lista de sugerencias en la página
+                obtenerSugerencias();
+            });
+            suggestionDiv.appendChild(deleteButton);
+
+            suggestionsList.appendChild(suggestionDiv);
+        });
+    }
+
+    // Ejecutamos la función al cargar la página para mostrar las sugerencias anteriores
+    window.onload = obtenerSugerencias;
+
+    document.getElementById("sugerenciaForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var mensaje = document.getElementById("mensaje").value;
+
+        // Obtenemos las sugerencias anteriores desde el almacenamiento local
+        var sugerencias = JSON.parse(localStorage.getItem("sugerencias")) || [];
+        
+        // Agregamos la nueva sugerencia
+        sugerencias.push(mensaje);
+        
+        // Guardamos las sugerencias actualizadas en el almacenamiento local
+        localStorage.setItem("sugerencias", JSON.stringify(sugerencias));
+
+        // Actualizamos la lista de sugerencias en la página
+        obtenerSugerencias();
+
+        alert("¡Gracias por tu sugerencia o queja!");
+        document.getElementById("mensaje").value = ""; // Limpiar el campo después de enviar
+    });
+</script>
+
+</body>
+</html>
+
